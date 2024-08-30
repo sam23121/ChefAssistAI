@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+
+  streamlit:
+    build: .
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: db
+    environment:
+      POSTGRES_DB: food_assistant  # Replace with your actual database name
+      POSTGRES_USER: sam      # Replace with your actual username
+      POSTGRES_PASSWORD: sam123  # Replace with your actual password
+    volumes:
+      - db-postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"  # Expose PostgreSQL port
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    environment:
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=db:5432
+      - GF_DATABASE_NAME=food_assistant  # Use the same database name as above
+      - GF_DATABASE_USER=sam       # Use the same username as above
+      - GF_DATABASE_PASSWORD=sam123   # Use the same password as above
+    depends_on:
+      - db
+
+volumes:
+  db-postgres-data:
+  grafana-data:

@@ -1,0 +1,8 @@
+FROM debian:bullseye-slim
+
+RUN apt-get update && apt-get install -y \
+    sqlite3 \
+    && rm -rf /var/lib/apt/lists/*
+
+VOLUME /var/lib/sqlite
+CMD ["sqlite3", "/var/lib/sqlite/database.db"]
