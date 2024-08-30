@@ -140,7 +140,7 @@ This command will build the Docker images and start the containers for the Strea
 
 ### Retrieval evaluation
 
-The basic approach - using minsearch without any boosting - gave the following metrics:
+Using vector search gave the following metrics:
 
 Hit rate: 88.8%
 MRR: 11.2%
