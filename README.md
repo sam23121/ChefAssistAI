@@ -159,6 +159,8 @@ in a sample with 200 records, I had:
 
 ## Background
 
+Below are the explanations for the key components in the project. This projects can be built with no credits and all llm providers are free.
+
 ### Docker and Docker Compose: A Detailed Explanation
 
 Docker and Docker Compose are used in this project to containerize the application, making it easy to deploy and run consistently across different environments.
