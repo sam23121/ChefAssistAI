@@ -1,5 +1,7 @@
 # ChefAssistAI
 
+![ChefAssistAI](assets/images/chefassistanai.webp)
+
 A cooking assistant that leverages Retrieval-Augmented Generation (RAG) to provide comprehensive cooking guidance.
 
 ## Overview
@@ -132,8 +134,10 @@ This command will build the Docker images and start the containers for the Strea
 
 ### Accessing the Application
 
-- Streamlit App: Visit http://localhost:8501 in your browser.
-- Grafana Dashboard: Visit http://localhost:3000 in your browser.
+- Streamlit App: Visit http://localhost:8501 in your browser. ![Streamlit](assets/images/streamlit.png)
+
+- Grafana Dashboard: Visit http://localhost:3000 in your browser. ![Grafana](assets/images/grafana.png)
+
 
 
 ## Evaluations
@@ -148,7 +152,7 @@ MRR: 11.2%
 
 ### RAG flow evaluation
 
-I used the LLM-as-a-Judge metric to evaluate the quality of our RAG flow.
+I used the LLM-as-a-Judge metric to evaluate the quality of our RAG flow. The llm used was from groq using llama3.1-70b-versatile
 
 in a sample with 200 records, I had:
 
