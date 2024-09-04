@@ -144,10 +144,18 @@ This command will build the Docker images and start the containers for the Strea
 
 ### Retrieval evaluation
 
-Using vector search gave the following metrics:
+Using Only vector search gave the following metrics:
 
 Hit rate: 88.8%
 MRR: 11.2%
+
+Using Hybrid search gave the following metrics:
+
+Hit rate: 37%
+MRR: 6.2%
+
+Which shows that vector search is better for this use case. (Maybe it was poor because of my implementation)
+
 
 
 ### RAG flow evaluation
