@@ -23,12 +23,7 @@ def main():
         st.session_state.count = 0
         print_log("Feedback count initialized to 0")
 
-    # Course selection
-    # course = st.selectbox(
-    #     "Select a course:",
-    #     ["machine-learning-zoomcamp", "data-engineering-zoomcamp", "mlops-zoomcamp"]
-    # )
-    # print_log(f"User selected course: {course}")
+    
 
     # Model selection
     model_choice = st.selectbox(
@@ -37,13 +32,7 @@ def main():
     )
     print_log(f"User selected model: {model_choice}")
 
-    # # Search type selection
-    # search_type = st.radio(
-    #     "Select search type:",
-    #     ["Text", "Vector"]
-    # )
-    # print_log(f"User selected search type: {search_type}")
-
+    
     # User input
     user_input = st.text_input("Enter your question:")
 
@@ -97,17 +86,16 @@ def main():
     relevance_filter = st.selectbox("Filter by relevance:", ["All", "RELEVANT", "PARTLY_RELEVANT", "NON_RELEVANT"])
     recent_conversations = get_recent_conversations(limit=5, relevance=relevance_filter if relevance_filter != "All" else None)
     for conv in recent_conversations:
-        st.write(f"Q: {conv[1]}")  # Use the correct index for 'question'
-        st.write(f"A: {conv[2]}")  # Use the correct index for 'answer'
-        st.write(f"Relevance: {conv[5]}")  # Use the correct index for 'relevance'
-        st.write(f"Model: {conv[3]}")  # Use the correct index for 'model_used'
+        st.write(f"Q: {conv[1]}")  
+        st.write(f"A: {conv[2]}")  
+        st.write(f"Relevance: {conv[5]}")  
+        st.write(f"Model: {conv[3]}")  
         st.write("---")
 
     # Display feedback stats
     feedback_stats = get_feedback_stats()
     if feedback_stats:
         thumbs_up, thumbs_down = feedback_stats  # Unpack the tuple
-        print_log(thumbs_up)  # Corrected from feedback_stats['thumbs_up'] to thumbs_up
         st.subheader("Feedback Statistics")
         st.write(f"Thumbs up: {thumbs_up}")
         st.write(f"Thumbs down: {thumbs_down}")

@@ -10,6 +10,8 @@ Navigating the culinary world can be daunting, especially for those new to cooki
 
 ChefAssistAI serves as a virtual kitchen companion, utilizing cutting-edge AI to offer instant, reliable guidance on all things food-related. From ingredient substitutions to cooking techniques, this tool empowers both novices and seasoned chefs to explore the culinary arts with confidence.
 
+If you are into blogs you can read it [here](https://medium.com/@smlalene/building-chefassistai-a-practical-guide-to-a-rag-powered-cooking-assistant-with-no-credits-7fd1974bea07)
+
 ### What ChefAssistAI Can Help With
 
 ChefAssistAI is designed to assist with a wide range of culinary queries and tasks, including:
@@ -124,6 +126,8 @@ import time
 from tqdm.auto import tqdm
 import pandas as pd
 from sentence_transformers import SentenceTransformer
+
+
 
 # Initialize Pinecone
 pc = pinecone.Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
